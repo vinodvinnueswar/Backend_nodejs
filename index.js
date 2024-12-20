@@ -8,7 +8,7 @@ const dotEnv = require("dotenv");
 
 const app = express()
 
-const PORT = 4000;
+const PORT = process.env.PORT  || 4000;
 
 dotEnv.config();
 
@@ -25,6 +25,6 @@ app.listen(PORT , ()=>{
     console.log(`server started at   ${PORT}`);
 });
 
-app.use('/home',(req,res) => {
+app.use('/',(req,res) => {
     res.send("<h2>Welcome home</h2>")
 })
