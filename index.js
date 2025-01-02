@@ -6,11 +6,12 @@ const dotEnv = require("dotenv");
  const firmRoutes = require('./routes/firmRoutes');
  const productRoutes= require('./routes/productRoutes');
  const cors = require('cors');
+ const path = require('path')
 
 const app = express()
 app.use(cors())
 
-const PORT = process.env.PORT ;
+const PORT = process.env.PORT || 4000;
 
 dotEnv.config();
 
@@ -25,7 +26,7 @@ app.use('/product',productRoutes);
 
 
 app.listen(PORT , ()=>{
-    console.log(`server started at   ${PORT}`);
+    console.log(`server started at  ${PORT}`);
 });
 
 // app.use('/',(req,res) => {
